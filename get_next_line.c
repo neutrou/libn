@@ -16,21 +16,21 @@
 
 char	*get_next_line(int fd)
 {
-	static t_llist	*temp = NULL;
+	static t_llist	*temp[1024] = NULL;
 	char			*tbr;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	tbr = NULL;
-	read_and_stock(fd, &temp);
+	read_and_stock(fd, &temp[fd]);
 	if (temp == NULL)
 		return (NULL);
-	ft_extractline(temp, &tbr);
-	ft_cleantemp(&temp);
+	ft_extractline(temp[fd], &tbr);
+	ft_cleantemp(&temp[fd]);
 	if (tbr[0] == '\0')
 	{
-		ft_freetemp(temp);
-		temp = NULL;
+		ft_freetemp(temp[fd]);
+		temp[fd] = NULL;
 		free(tbr);
 		return (NULL);
 	}
