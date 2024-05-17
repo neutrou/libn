@@ -57,7 +57,7 @@ int		ft_memcmp(const void *s1, const void *s2, int n);
 void	*ft_memcpy(void *dest, const void *src, int n);
 void	*ft_memmove(void *dest, const void *src, int n);
 void	*ft_memset(void *s, int c, int n);
-void	ft_puttab(char   **tab);
+void	ft_puttab(char **tab);
 int		ft_printf(const char *format, ...);
 int		ft_printfmemlen_fd(unsigned long long ptr, int fd);
 void	ft_putchar_fd(char c, int fd);

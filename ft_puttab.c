@@ -15,7 +15,7 @@
 
 void	ft_puttab(char **tab)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (tab[++i])
