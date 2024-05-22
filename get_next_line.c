@@ -6,7 +6,7 @@
 /*   By: valgrant <valgrant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 14:17:58 by valgrant          #+#    #+#             */
-/*   Updated: 2024/05/22 21:42:31 by valgrant         ###   ########.fr       */
+/*   Updated: 2024/05/22 21:51:04 by valgrant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*get_next_line(int fd)
 		return (NULL);
 	tbr = NULL;
 	read_and_stock(fd, &temp[fd]);
-	if (temp == NULL)
+	if (temp[fd] == NULL)
 		return (NULL);
 	ft_extractline(temp[fd], &tbr);
 	ft_cleantemp(&temp[fd]);
