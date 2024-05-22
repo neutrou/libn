@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libn.h"
 #include <stdarg.h>
 
 int	get_type(char c, va_list args)

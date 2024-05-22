@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include "libft.h"
+#include "libn.h"
 
 void	ft_puttab(char **tab)
 {

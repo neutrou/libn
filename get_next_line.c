@@ -6,17 +6,17 @@
 /*   By: valgrant <valgrant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 14:17:58 by valgrant          #+#    #+#             */
-/*   Updated: 2024/04/09 19:52:51 by valgrant         ###   ########.fr       */
+/*   Updated: 2024/05/22 21:42:31 by valgrant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libn.h"
 #include <fcntl.h>
 #include <stdio.h>
 
 char	*get_next_line(int fd)
 {
-	static t_llist	*temp[1024] = NULL;
+	static t_llist	*temp[1024];
 	char			*tbr;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)

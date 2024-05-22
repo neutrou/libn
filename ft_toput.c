@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libn.h"
 #include <unistd.h>
 
 int	ft_putstrlen_fd(char *s, int fd)

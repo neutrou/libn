@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libn.h"
 
 int	ft_putnbrhexalong_fd(unsigned long long n, int fd, int maj)
 {
