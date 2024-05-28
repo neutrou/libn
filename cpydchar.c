@@ -6,7 +6,7 @@
 /*   By: valgrant <valgrant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 19:00:02 by valgrant          #+#    #+#             */
-/*   Updated: 2024/05/28 13:41:00 by valgrant         ###   ########.fr       */
+/*   Updated: 2024/05/28 14:44:08 by valgrant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	**copydchar(char **og)
 	{
 		len = ft_strlen(og[i]);
 		copy[i] = (char *)malloc((len + 1) * sizeof(char));
-		ft_strlcpy(copy[i], og[i], len);
+		ft_strlcpy(copy[i], og[i], len + 1);
 	}
 	copy[nrow] = NULL;
 	return (copy);
