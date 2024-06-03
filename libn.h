@@ -27,6 +27,7 @@ typedef struct s_llist
 }		t_llist;
 
 char	**copydchar(char **og);
+void	freedchar(char	**tab);
 int		ft_atoi(const char *nb);
 void	ft_bzero(void *s, int len);
 void	*ft_calloc(size_t count, size_t size);

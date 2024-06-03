@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   freedchar.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: valgrant <valgrant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/21 16:27:25 by valgrant          #+#    #+#             */
-/*   Updated: 2024/06/03 13:39:52 by valgrant         ###   ########.fr       */
+/*   Created: 2024/06/03 13:38:02 by valgrant          #+#    #+#             */
+/*   Updated: 2024/06/03 13:38:58 by valgrant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libn.h"
 
-int	ft_isspace(char c)
+void	freedchar(char	**tab)
 {
-	return (c == ' ' || (c >= '\t' && c <= '\r'));
-}
+	int	i;
 
-int	ft_atoi(const char *nb)
-{
-	int	integer;
-	int	mult;
-
-	integer = 0;
-	mult = 1;
-	while (ft_isspace(*nb))
-		nb++;
-	if (*nb == '-' || *nb == '+')
-		mult = 44 - *nb++;
-	while (ft_isdigit(*nb))
-		integer = (integer * 10) + (*nb++ - 48);
-	return (integer * mult);
+	i = -1;
+	while (tab[++i])	
+		free(tab[i]);
+	free(tab);
 }

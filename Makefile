@@ -6,7 +6,7 @@
 #    By: valgrant <valgrant@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/20 11:51:44 by valgrant          #+#    #+#              #
-#    Updated: 2024/05/27 18:29:14 by valgrant         ###   ########.fr        #
+#    Updated: 2024/06/03 13:39:25 by valgrant         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_is.c \
 	ft_strlcat.c ft_strlcpy.c ft_strmapi.c ft_strncmp.c ft_strnstr.c \
 	ft_strrchr.c ft_strtrim.c ft_substr.c ft_toupper.c ft_tolower.c \
 	ft_toput.c main.c ft_printfmem_fd.c ft_tohexa.c \
-	get_next_line.c get_next_line_utils.c ft_puttab.c cpydchar.c
+	get_next_line.c get_next_line_utils.c ft_puttab.c cpydchar.c freedchar.c
 
 OBJS = ${SRC:.c=.o}
 
