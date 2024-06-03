@@ -6,7 +6,7 @@
 /*   By: valgrant <valgrant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 13:38:02 by valgrant          #+#    #+#             */
-/*   Updated: 2024/06/03 13:38:58 by valgrant         ###   ########.fr       */
+/*   Updated: 2024/06/03 13:46:33 by valgrant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	freedchar(char	**tab)
 	int	i;
 
 	i = -1;
-	while (tab[++i])	
+	while (tab[++i])
 		free(tab[i]);
 	free(tab);
 }
