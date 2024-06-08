@@ -12,11 +12,18 @@
 
 #ifndef utils_H
 # define utils_H
-# define RED "\033[0;31m"
-# define GREEN "\033[0;32m"
-# define YELLOW "\033[0;33m"
-# define BLUE "\033[0;34m"
-# define RESET "\033[0m"
+# ifndef COLORS
+#  define COLORS
+#  define RED		"\x1b[31m"
+#  define GREEN		"\x1b[32m"
+#  define YELLOW	"\x1b[33m"
+#  define BLUE		"\x1b[34m"
+#  define MAGENTA	"\x1b[35m"
+#  define CYAN		"\x1b[36m"
+#  define BROWN		"\x1b[33m"
+#  define GREY		"\x1b[90m"
+#  define RESET		"\x1b[0m"
+# endif
 # include "libn.h"
 
 //DCHARS MANIP
