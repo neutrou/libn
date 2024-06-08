@@ -6,7 +6,7 @@
 /*   By: neutrou <neutrou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 17:07:54 by ewoillar          #+#    #+#             */
-/*   Updated: 2024/06/08 21:40:47 by neutrou          ###   ########.fr       */
+/*   Updated: 2024/06/08 22:43:52 by neutrou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,14 +61,14 @@ void	*gc_malloc(int size, t_alloc **mem)
 	void	*ptr;
 
 	ptr = malloc(size);
-    if (!ptr)
-    {
-        gc_free_all(mem);
-        ft_putstr_fd(RED, 2);
-        ft_putstr_fd("Critical : malloc failure\n", 2);
-        ft_putstr_fd(RESET, 2);
-        exit(1);
-    }
+	if (!ptr)
+	{
+		gc_free_all(mem);
+		ft_putstr_fd(RED, 2);
+		ft_putstr_fd("Critical : malloc failure\n", 2);
+		ft_putstr_fd(RESET, 2);
+		exit(1);
+	}
 	insert_alloc(ptr, mem);
 	return (ptr);
 }

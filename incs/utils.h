@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.h                                              :+:      :+:    :+:   */
+/*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: neutrou <neutrou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 15:07:51 by neutrou           #+#    #+#             */
-/*   Updated: 2024/06/08 18:17:10 by neutrou          ###   ########.fr       */
+/*   Updated: 2024/06/08 22:43:35 by neutrou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef utils_H
-# define utils_H
+#ifndef UTILS_H
+# define UTILS_H
 # ifndef COLORS
 #  define COLORS
 #  define RED		"\x1b[31m"
