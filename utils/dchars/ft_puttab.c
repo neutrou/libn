@@ -6,12 +6,12 @@
 /*   By: neutrou <neutrou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 11:23:56 by neutrou           #+#    #+#             */
-/*   Updated: 2024/06/08 16:41:08 by neutrou          ###   ########.fr       */
+/*   Updated: 2024/06/08 21:40:47 by neutrou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include "../../incs/wtv.h"
+#include "../../incs/utils.h"
 
 void	ft_puttab(char **tab)
 {

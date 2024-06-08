@@ -6,11 +6,11 @@
 /*   By: neutrou <neutrou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 19:00:02 by valgrant          #+#    #+#             */
-/*   Updated: 2024/06/08 18:15:42 by neutrou          ###   ########.fr       */
+/*   Updated: 2024/06/08 21:40:47 by neutrou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incs/wtv.h"
+#include "../../incs/utils.h"
 
 char	**copydchar(char **og, t_alloc *mem)
 {
