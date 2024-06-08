@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: valgrant <valgrant@student.42.fr>          +#+  +:+       +#+         #
+#    By: neutrou <neutrou@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/20 11:51:44 by valgrant          #+#    #+#              #
-#    Updated: 2024/06/03 13:39:25 by valgrant         ###   ########.fr        #
+#    Updated: 2024/06/08 18:46:53 by neutrou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,28 +14,76 @@ NAME = libn.a
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
-SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_is.c \
-	ft_itoa.c ft_mem.c ft_len.c ft_is.c ft_tofd.c \
-	ft_split.c ft_strchr.c ft_strdup.c ft_striteri.c ft_strjoin.c \
-	ft_strlcat.c ft_strlcpy.c ft_strmapi.c ft_strncmp.c ft_strnstr.c \
-	ft_strrchr.c ft_strtrim.c ft_substr.c ft_toupper.c ft_tolower.c \
-	ft_toput.c main.c ft_printfmem_fd.c ft_tohexa.c \
-	get_next_line.c get_next_line_utils.c ft_puttab.c cpydchar.c freedchar.c
+OGS = ogs/ft_atoi.c \
+	ogs/ft_bzero.c \
+	ogs/ft_calloc.c \
+	ogs/ft_is.c \
+	ogs/ft_itoa.c \
+	ogs/ft_mem.c \
+	ogs/ft_len.c \
+	ogs/ft_is.c \
+	ogs/ft_tofd.c \
+	ogs/ft_split.c  \
+	ogs/ft_strchr.c  \
+	ogs/ft_strdup.c  \
+	ogs/ft_striteri.c \
+	ogs/ft_strjoin.c \
+	ogs/ft_strlcat.c \
+	ogs/ft_strlcpy.c \
+	ogs/ft_strmapi.c \
+	ogs/ft_strncmp.c \
+	ogs/ft_strnstr.c \
+	ogs/ft_strrchr.c \
+	ogs/ft_strtrim.c \
+	ogs/ft_substr.c  \
+	ogs/ft_toupper.c \
+	ogs/ft_tolower.c
 
-OBJS = ${SRC:.c=.o}
+PRINTF = printf/ft_printf.c \
+	printf/ft_toput.c \
+	printf/ft_printfmem_fd.c \
+	printf/ft_tohexa.c
+
+GNL = gnl/get_next_line.c \
+	gnl/get_next_line_utils.c
+
+DCHARS = wtv/dchars/ft_puttab.c \
+	wtv/dchars/cpydchar.c \
+	wtv/dchars/freedchar.c
+
+GC = gc_allocs/gc_malloc.c \
+	gc_allocs/gc_calloc.c \
+	gc_allocs/gc_strdup.c \
+	gc_allocs/gc_itoa.c \
+	gc_allocs/gc_split.c \
+	gc_allocs/gc_strjoin.c
+
+SRCS = ${OGS} ${PRINTF} ${GNL} ${DCHARS} ${GC}
+
+@OBJS = ${SRCS:.c=.o}
+
+pre_obj:
+	@echo "Creating objects"
+
+post_obj:
+	@echo "Creation of objects done"
 
 all: ${NAME}
 
-${NAME}: ${OBJS}
-	ar -rcs ${NAME} ${OBJS}
+${NAME}: pre_obj ${OBJS} post_obj
+	@echo "Creating library"
+	@ar -rcs ${NAME} ${OBJS}
+	@echo "Compilation of ${NAME} is done"
 
 clean:
-	rm -rf ${OBJS} ${OBJS_BONUS}
+	@rm -rf ${OBJS}
+	@echo "Objects files removed"
 
 fclean: clean
-	rm -rf ${NAME}
+	@rm -rf ${NAME}
+	@echo "Library file removed"
 
 re: fclean all
 
