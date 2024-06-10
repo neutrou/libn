@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   gc_malloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: neutrou <neutrou@student.42.fr>            +#+  +:+       +#+        */
+/*   By: valgrant <valgrant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 17:07:54 by ewoillar          #+#    #+#             */
-/*   Updated: 2024/06/08 22:43:52 by neutrou          ###   ########.fr       */
+/*   Updated: 2024/06/10 11:24:04 by valgrant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,14 @@ void	insert_alloc(void *ptr, t_alloc **mem)
 	t_alloc	*new;
 
 	new = malloc(sizeof(t_alloc));
+	if (!new)
+	{
+		gc_free_all(mem);
+		ft_putstr_fd(RED, 2);
+		ft_putstr_fd("Critical : malloc failure\n", 2);
+		ft_putstr_fd(RESET, 2);
+		exit(1);
+	}
 	new->adress = ptr;
 	new->next = NULL;
 	if (mem && *mem)
