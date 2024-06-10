@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: neutrou <neutrou@student.42.fr>            +#+  +:+       +#+        */
+/*   By: valgrant <valgrant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 15:07:51 by neutrou           #+#    #+#             */
-/*   Updated: 2024/06/08 22:43:35 by neutrou          ###   ########.fr       */
+/*   Updated: 2024/06/10 14:48:36 by valgrant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ void	*gc_malloc(int size, t_alloc **mem);
 void	insert_alloc(void *ptr, t_alloc **mem);
 
 //GC FUNCTIONS
-char	*gc_itoa(int n, t_alloc *mem);
-char	*gc_strdup(const char *str, t_alloc *mem);
-char	**gc_split(const char *s, char c, t_alloc *mem);
-void	*gc_calloc(size_t count, size_t size, t_alloc *mem);
-char	*gc_strjoin(char const *str1, char const *str2, t_alloc *mem);
+char	*gc_itoa(int n, t_alloc **mem);
+char	*gc_strdup(const char *str, t_alloc **mem);
+char	**gc_split(const char *s, char c, t_alloc **mem);
+void	*gc_calloc(size_t count, size_t size, t_alloc **mem);
+char	*gc_strjoin(char const *str1, char const *str2, t_alloc **mem);
 
 #endif
