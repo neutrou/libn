@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   gnl.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: neutrou <neutrou@student.42.fr>            +#+  +:+       +#+        */
+/*   By: valgrant <valgrant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 15:07:24 by neutrou           #+#    #+#             */
-/*   Updated: 2024/06/08 18:14:35 by neutrou          ###   ########.fr       */
+/*   Updated: 2024/06/10 11:05:13 by valgrant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ void	addtotemp(t_list **temp, char *buf, int readed, t_alloc *mem);
 void	ft_extractline(t_list *temp, char **tbr, t_alloc *mem);
 void	ft_generateline(char **line, t_list *temp, t_alloc *mem);
 void	ft_cleantemp(t_list **temp, t_alloc *mem);
-void	ft_freetemp(t_list *temp);
+void	gc_freetemp(t_list *temp, t_alloc *mem);
 
 #endif

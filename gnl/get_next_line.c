@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: neutrou <neutrou@student.42.fr>            +#+  +:+       +#+        */
+/*   By: valgrant <valgrant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 14:17:58 by valgrant          #+#    #+#             */
-/*   Updated: 2024/06/08 18:20:52 by neutrou          ###   ########.fr       */
+/*   Updated: 2024/06/10 11:05:37 by valgrant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*get_next_line(int fd, t_alloc *mem)
 	ft_cleantemp(&temp[fd], mem);
 	if (tbr[0] == '\0')
 	{
-		ft_freetemp(temp[fd]);
+		gc_freetemp(temp[fd], mem);
 		temp[fd] = NULL;
 		gc_free(tbr, &mem);
 		return (NULL);
@@ -150,6 +150,6 @@ void	ft_cleantemp(t_list **temp, t_alloc *mem)
 	while (last->content[i])
 		clean_node->content[j++] = last->content[i++];
 	clean_node->content[j] = '\0';
-	ft_freetemp(*temp);
+	gc_freetemp(*temp, mem);
 	*temp = clean_node;
 }

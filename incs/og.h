@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   og.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: neutrou <neutrou@student.42.fr>            +#+  +:+       +#+        */
+/*   By: valgrant <valgrant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 12:21:43 by valgrant          #+#    #+#             */
-/*   Updated: 2024/06/08 15:47:02 by neutrou          ###   ########.fr       */
+/*   Updated: 2024/06/10 11:02:49 by valgrant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strtrim(char const *str, char const *sep);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+
+/*UTILS*/
+size_t	ft_wordcount(const char *s, char c);
+int	ft_strlenword(const char *s, char c, int i);
+// char	*ft_table(const char *s, char c, int i, t_alloc *mem);
 
 #endif
