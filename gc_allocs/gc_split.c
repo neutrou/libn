@@ -6,7 +6,7 @@
 /*   By: valgrant <valgrant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 18:50:47 by valgrant          #+#    #+#             */
-/*   Updated: 2024/06/10 11:03:48 by valgrant         ###   ########.fr       */
+/*   Updated: 2024/06/10 14:47:16 by valgrant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char	*gc_table(const char *s, char c, int i, t_alloc *mem)
+char	*gc_table(const char *s, char c, int i, t_alloc **mem)
 {
 	int		j;
 	char	*str;
 
 	j = 0;
-	str = (char *)gc_malloc((ft_strlenword(s, c, i) + 1) * sizeof(char), &mem);
-	if (str == NULL)
-		return (str);
+	str = (char *)gc_malloc((ft_strlenword(s, c, i) + 1) * sizeof(char), mem);
 	while (s[i] != c && s[i] != 0)
 	{
 		str[j] = s[i];
@@ -33,7 +31,7 @@ char	*gc_table(const char *s, char c, int i, t_alloc *mem)
 	return (str);
 }
 
-char	**gc_split(const char *s, char c, t_alloc *mem)
+char	**gc_split(const char *s, char c, t_alloc **mem)
 {
 	int		i;
 	int		j;
@@ -41,9 +39,7 @@ char	**gc_split(const char *s, char c, t_alloc *mem)
 
 	i = 0;
 	j = 0;
-	str = (char **)gc_malloc((ft_wordcount(s, c) + 1) * sizeof(char *), &mem);
-	if (str == NULL)
-		return (str);
+	str = (char **)gc_malloc((ft_wordcount(s, c) + 1) * sizeof(char *), mem);
 	while (s[i] != 0)
 	{
 		while (s[i] == c)

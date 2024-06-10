@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   gc_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: neutrou <neutrou@student.42.fr>            +#+  +:+       +#+        */
+/*   By: valgrant <valgrant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 20:21:35 by valgrant          #+#    #+#             */
-/*   Updated: 2024/06/08 18:18:05 by neutrou          ###   ########.fr       */
+/*   Updated: 2024/06/10 14:46:35 by valgrant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-char	*gc_itoa(int n, t_alloc *mem)
+char	*gc_itoa(int n, t_alloc **mem)
 {
 	char	*c;
 	int		len;
@@ -24,7 +24,7 @@ char	*gc_itoa(int n, t_alloc *mem)
 		return (gc_strdup("-2147483648", mem));
 	if (n == 0)
 		return (gc_strdup("0", mem));
-	c = gc_malloc((len + 1) * sizeof(char), &mem);
+	c = gc_malloc((len + 1) * sizeof(char), mem);
 	if (c == NULL)
 		return (NULL);
 	c[len--] = 0;

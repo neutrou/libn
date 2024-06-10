@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   gc_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: neutrou <neutrou@student.42.fr>            +#+  +:+       +#+        */
+/*   By: valgrant <valgrant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 15:42:37 by valgrant          #+#    #+#             */
-/*   Updated: 2024/06/08 18:18:26 by neutrou          ###   ########.fr       */
+/*   Updated: 2024/06/10 14:47:29 by valgrant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incs/og.h"
 
-char	*gc_strjoin(char const *str1, char const *str2, t_alloc *mem)
+char	*gc_strjoin(char const *str1, char const *str2, t_alloc **mem)
 {
 	char	*fstr;
 	int		i;
@@ -21,8 +21,6 @@ char	*gc_strjoin(char const *str1, char const *str2, t_alloc *mem)
 	i = 0;
 	j = 0;
 	fstr = gc_calloc(ft_strlen(str1) + ft_strlen(str2) + 1, sizeof(char), mem);
-	if (fstr == NULL)
-		return (NULL);
 	while (str1[i] != '\0')
 	{
 		fstr[i] = str1[i];
