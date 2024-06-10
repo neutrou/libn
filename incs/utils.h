@@ -6,7 +6,7 @@
 /*   By: valgrant <valgrant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 15:07:51 by neutrou           #+#    #+#             */
-/*   Updated: 2024/06/10 14:48:36 by valgrant         ###   ########.fr       */
+/*   Updated: 2024/06/10 14:51:10 by valgrant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 # include "libn.h"
 
 //DCHARS MANIP
-char	**copydchar(char **og, t_alloc *mem);
+char	**copydchar(char **og, t_alloc **mem);
 void	freedchar(char	**tab);
 void	ft_puttab(char **tab);
 
