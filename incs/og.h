@@ -6,7 +6,7 @@
 /*   By: valgrant <valgrant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 12:21:43 by valgrant          #+#    #+#             */
-/*   Updated: 2024/06/10 11:02:49 by valgrant         ###   ########.fr       */
+/*   Updated: 2024/06/11 12:18:23 by valgrant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ int		ft_toupper(int c);
 
 /*UTILS*/
 size_t	ft_wordcount(const char *s, char c);
-int	ft_strlenword(const char *s, char c, int i);
-// char	*ft_table(const char *s, char c, int i, t_alloc *mem);
+int		ft_strlenword(const char *s, char c, int i);
 
 #endif
