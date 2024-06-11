@@ -6,15 +6,12 @@
 /*   By: valgrant <valgrant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 12:21:43 by valgrant          #+#    #+#             */
-/*   Updated: 2024/06/11 12:18:23 by valgrant         ###   ########.fr       */
+/*   Updated: 2024/06/11 13:59:23 by valgrant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef OG_H
 # define OG_H
-# include <stddef.h>
-# include <stdlib.h>
-# include <unistd.h>
 # include "libn.h"
 
 int		ft_atoi(const char *nb);

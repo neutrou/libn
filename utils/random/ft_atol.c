@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libn.h                                             :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: valgrant <valgrant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/08 15:42:30 by neutrou           #+#    #+#             */
-/*   Updated: 2024/06/11 14:09:55 by valgrant         ###   ########.fr       */
+/*   Created: 2024/06/11 15:28:18 by valgrant          #+#    #+#             */
+/*   Updated: 2024/06/11 15:31:49 by valgrant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBN_H
-# define LIBN_H
+#include "../../incs/utils.h"
 
-# include <stdarg.h>
-# include <stddef.h>
-# include <stdlib.h>
-# include <stdbool.h>
-# include <unistd.h>
-# include "types.h"
-# include "og.h"
-# include "utils.h"
-# include "gnl.h"
-# include "ft_printf.h"
+long	ft_atol(const char *nb)
+{
+	long	n;
+	int		mult;
 
-#endif
+	n = 0;
+	mult = 1;
+	while (ft_isspace(*nb))
+		nb++;
+	if (*nb == '-' || *nb == '+')
+		mult = 44 - *nb++;
+	while (ft_isdigit(*nb))
+		n = (n * 10) + (*nb++ - 48);
+	return (n * mult);
+}

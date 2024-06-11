@@ -6,7 +6,7 @@
 /*   By: valgrant <valgrant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 15:07:51 by neutrou           #+#    #+#             */
-/*   Updated: 2024/06/10 14:51:10 by valgrant         ###   ########.fr       */
+/*   Updated: 2024/06/11 15:31:07 by valgrant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,9 @@ char	*gc_strdup(const char *str, t_alloc **mem);
 char	**gc_split(const char *s, char c, t_alloc **mem);
 void	*gc_calloc(size_t count, size_t size, t_alloc **mem);
 char	*gc_strjoin(char const *str1, char const *str2, t_alloc **mem);
+
+//IDK EVEN KNOW
+long	ft_atol(const char *nb);
+bool	isint(char *n);
 
 #endif

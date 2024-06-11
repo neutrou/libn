@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: neutrou <neutrou@student.42.fr>            +#+  +:+       +#+         #
+#    By: valgrant <valgrant@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/20 11:51:44 by valgrant          #+#    #+#              #
-#    Updated: 2024/06/08 22:31:08 by neutrou          ###   ########.fr        #
+#    Updated: 2024/06/11 15:33:13 by valgrant         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,9 @@ GNL = gnl/get_next_line.c \
 
 UTILS = utils/dchars/ft_puttab.c \
 	utils/dchars/cpydchar.c \
-	utils/dchars/freedchar.c
+	utils/dchars/freedchar.c \
+	utils/random/istype.c \
+	utils/random/ft_atol.c
 
 GC = gc_allocs/gc_malloc.c \
 	gc_allocs/gc_calloc.c \

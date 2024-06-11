@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: neutrou <neutrou@student.42.fr>            +#+  +:+       +#+        */
+/*   By: valgrant <valgrant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 15:07:35 by neutrou           #+#    #+#             */
-/*   Updated: 2024/06/08 15:43:28 by neutrou          ###   ########.fr       */
+/*   Updated: 2024/06/11 13:59:23 by valgrant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
-# include <stdarg.h>
 
 int		ft_printf(const char *format, ...);
 int		ft_printfmemlen_fd(unsigned long long ptr, int fd);
