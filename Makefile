@@ -6,7 +6,7 @@
 #    By: valgrant <valgrant@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/20 11:51:44 by valgrant          #+#    #+#              #
-#    Updated: 2024/06/11 15:33:13 by valgrant         ###   ########.fr        #
+#    Updated: 2024/06/15 14:41:00 by valgrant         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,6 +59,7 @@ GC = gc_allocs/gc_malloc.c \
 	gc_allocs/gc_strdup.c \
 	gc_allocs/gc_itoa.c \
 	gc_allocs/gc_split.c \
+	gc_allocs/gc_cpydchar.c \
 	gc_allocs/gc_strjoin.c
 
 SRCS = ${OGS} ${PRINTF} ${GNL} ${UTILS} ${GC}

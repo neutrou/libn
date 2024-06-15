@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cpydchar.c                                         :+:      :+:    :+:   */
+/*   gc_cpydchar.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: valgrant <valgrant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 19:00:02 by valgrant          #+#    #+#             */
-/*   Updated: 2024/06/15 14:39:32 by valgrant         ###   ########.fr       */
+/*   Updated: 2024/06/15 14:41:22 by valgrant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incs/utils.h"
+#include "../incs/og.h"
 
-char	**copydchar(char **og)
+char	**gc_copydchar(char **og, t_alloc **mem)
 {
 	int		i;
 	int		nrow;
@@ -23,11 +23,11 @@ char	**copydchar(char **og)
 	nrow = 0;
 	while (og[nrow])
 		nrow++;
-	copy = (char **)malloc((nrow + 1) * sizeof(char *));
+	copy = (char **)gc_malloc((nrow + 1) * sizeof(char *), mem);
 	while (og[++i])
 	{
 		len = ft_strlen(og[i]) + 1;
-		copy[i] = (char *)malloc((len) * sizeof(char));
+		copy[i] = (char *)gc_malloc((len) * sizeof(char), mem);
 		ft_strlcpy(copy[i], og[i], len);
 	}
 	copy[nrow] = NULL;
