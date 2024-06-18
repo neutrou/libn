@@ -6,7 +6,7 @@
 #    By: valgrant <valgrant@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/20 11:51:44 by valgrant          #+#    #+#              #
-#    Updated: 2024/06/15 14:41:00 by valgrant         ###   ########.fr        #
+#    Updated: 2024/06/18 16:26:25 by valgrant         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,9 @@ PRINTF = printf/ft_printf.c \
 	printf/ft_tohexa.c
 
 GNL = gnl/get_next_line.c \
-	gnl/get_next_line_utils.c
+	gnl/get_next_line_utils.c \
+	gnl/gc_get_next_line.c \
+	gnl/gc_get_next_line_utils.c
 
 UTILS = utils/dchars/ft_puttab.c \
 	utils/dchars/cpydchar.c \

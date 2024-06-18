@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
+/*   gc_get_next_line.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: valgrant <valgrant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 14:17:58 by valgrant          #+#    #+#             */
-/*   Updated: 2024/06/18 16:25:25 by valgrant         ###   ########.fr       */
+/*   Updated: 2024/06/18 16:27:55 by valgrant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incs/gnl.h"
+#include <fcntl.h>
+#include <stdio.h>
 
-char	*get_next_line(int fd)
+char	*gc_get_next_line(int fd, t_alloc *mem)
 {
 	static t_list	*temp[1024];
 	char			*tbr;
@@ -20,16 +22,16 @@ char	*get_next_line(int fd)
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	tbr = NULL;
-	read_and_stock(fd, &temp[fd]);
+	gc_read_and_stock(fd, &temp[fd], mem);
 	if (temp[fd] == NULL)
 		return (NULL);
-	ft_extractline(temp[fd], &tbr);
-	ft_cleantemp(&temp[fd]);
+	gc_extractline(temp[fd], &tbr, mem);
+	gc_cleantemp(&temp[fd], mem);
 	if (tbr[0] == '\0')
 	{
-		ft_freetemp(temp[fd]);
+		gc_freetemp(temp[fd], mem);
 		temp[fd] = NULL;
-		free(tbr);
+		gc_free(tbr, &mem);
 		return (NULL);
 	}
 	return (tbr);
@@ -37,42 +39,42 @@ char	*get_next_line(int fd)
 
 /* read() et stock dans temp */
 
-void	read_and_stock(int fd, t_list **temp)
+void	gc_read_and_stock(int fd, t_list **temp, t_alloc *mem)
 {
 	char	*buffer;
 	int		len;
 
 	len = 1;
-	while (!ft_tonl(*temp) && len != 0)
+	while (!gc_tonl(*temp) && len != 0)
 	{
-		buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+		buffer = gc_malloc(sizeof(char) * (BUFFER_SIZE + 1), &mem);
 		if (buffer == NULL)
 			return ;
 		len = (int)read(fd, buffer, BUFFER_SIZE);
 		if ((*temp == NULL && len == 0) || len == -1)
 		{
-			free(buffer);
+			gc_free(buffer, &mem);
 			return ;
 		}
 		buffer[len] = '\0';
-		addtotemp(temp, buffer, len);
-		free(buffer);
+		gc_addtotemp(temp, buffer, len, mem);
+		gc_free(buffer, &mem);
 	}
 }
 
 /* cat le buffer et le temp */
 
-void	addtotemp(t_list **stash, char *buffer, int len)
+void	gc_addtotemp(t_list **stash, char *buffer, int len, t_alloc *mem)
 {
 	int		i;
 	t_list	*last;
 	t_list	*new_node;
 
-	new_node = malloc(sizeof(t_list));
+	new_node = gc_malloc(sizeof(t_list), &mem);
 	if (new_node == NULL)
 		return ;
 	new_node->next = NULL;
-	new_node->content = malloc(sizeof(char) * (len + 1));
+	new_node->content = gc_malloc(sizeof(char) * (len + 1), &mem);
 	if (new_node->content == NULL)
 		return ;
 	i = 0;
@@ -87,20 +89,20 @@ void	addtotemp(t_list **stash, char *buffer, int len)
 		*stash = new_node;
 		return ;
 	}
-	last = ft_getlast(*stash);
+	last = gc_getlast(*stash);
 	last->next = new_node;
 }
 
 /* prends les char et les mets jusqu'au nl */
 
-void	ft_extractline(t_list *temp, char **tbr)
+void	gc_extractline(t_list *temp, char **tbr, t_alloc *mem)
 {
 	int	i;
 	int	j;
 
 	if (temp == NULL)
 		return ;
-	ft_generateline(tbr, temp);
+	gc_generateline(tbr, temp, mem);
 	if (*tbr == NULL)
 		return ;
 	j = 0;
@@ -123,14 +125,14 @@ void	ft_extractline(t_list *temp, char **tbr)
 
 /* nettoie le temp et garde les char non returned */
 
-void	ft_cleantemp(t_list **temp)
+void	gc_cleantemp(t_list **temp, t_alloc *mem)
 {
 	t_list	*last;
 	t_list	*clean_node;
 	int		i;
 	int		j;
 
-	clean_node = malloc(sizeof(t_list));
+	clean_node = gc_malloc(sizeof(t_list), &mem);
 	if (temp == NULL || clean_node == NULL)
 		return ;
 	clean_node->next = NULL;
@@ -140,14 +142,14 @@ void	ft_cleantemp(t_list **temp)
 		i++;
 	if (last->content && last->content[i] == '\n')
 		i++;
-	clean_node->content = malloc(sizeof(char) * \
-	((ft_strlen(last->content) - i) + 1));
+	clean_node->content = gc_malloc(sizeof(char) * \
+	((ft_strlen(last->content) - i) + 1), &mem);
 	if (clean_node->content == NULL)
 		return ;
 	j = 0;
 	while (last->content[i])
 		clean_node->content[j++] = last->content[i++];
 	clean_node->content[j] = '\0';
-	ft_freetemp(*temp);
+	gc_freetemp(*temp, mem);
 	*temp = clean_node;
 }
