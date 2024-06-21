@@ -6,7 +6,7 @@
 /*   By: valgrant <valgrant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 15:28:18 by valgrant          #+#    #+#             */
-/*   Updated: 2024/06/11 15:31:49 by valgrant         ###   ########.fr       */
+/*   Updated: 2024/06/21 11:30:27 by valgrant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,14 @@ long	ft_atol(const char *nb)
 	while (ft_isdigit(*nb))
 		n = (n * 10) + (*nb++ - 48);
 	return (n * mult);
+}
+
+int	ft_ftoi(float n)
+{
+	return ((int)roundf(n));
+}
+
+float	ft_itof(int n)
+{
+	return ((float)n);
 }

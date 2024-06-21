@@ -6,7 +6,7 @@
 #    By: valgrant <valgrant@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/20 11:51:44 by valgrant          #+#    #+#              #
-#    Updated: 2024/06/18 16:26:25 by valgrant         ###   ########.fr        #
+#    Updated: 2024/06/21 11:32:23 by valgrant         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,7 @@ UTILS = utils/dchars/ft_puttab.c \
 	utils/dchars/cpydchar.c \
 	utils/dchars/freedchar.c \
 	utils/random/istype.c \
-	utils/random/ft_atol.c
+	utils/random/conversions.c
 
 GC = gc_allocs/gc_malloc.c \
 	gc_allocs/gc_calloc.c \

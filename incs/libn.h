@@ -6,7 +6,7 @@
 /*   By: valgrant <valgrant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 15:42:30 by neutrou           #+#    #+#             */
-/*   Updated: 2024/06/11 14:09:55 by valgrant         ###   ########.fr       */
+/*   Updated: 2024/06/21 11:30:57 by valgrant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <stdbool.h>
 # include <unistd.h>
+# include <math.h>
 # include "types.h"
 # include "og.h"
 # include "utils.h"

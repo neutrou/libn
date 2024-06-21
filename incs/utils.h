@@ -6,7 +6,7 @@
 /*   By: valgrant <valgrant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 15:07:51 by neutrou           #+#    #+#             */
-/*   Updated: 2024/06/15 14:39:56 by valgrant         ###   ########.fr       */
+/*   Updated: 2024/06/21 11:31:53 by valgrant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,12 @@ void	*gc_calloc(size_t count, size_t size, t_alloc **mem);
 char	*gc_strjoin(char const *str1, char const *str2, t_alloc **mem);
 char	**gc_copydchar(char **og, t_alloc **mem);
 
-//IDK EVEN KNOW
+//CONVERSIONS
 long	ft_atol(const char *nb);
+int		ft_ftoi(float n);
+float	ft_itof(int n);
+
+//I DONT EVEN KNOW
 bool	isint(char *n);
 
 #endif
