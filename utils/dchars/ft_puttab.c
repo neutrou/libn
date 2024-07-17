@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_puttab.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: neutrou <neutrou@student.42.fr>            +#+  +:+       +#+        */
+/*   By: valgrant <valgrant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 11:23:56 by neutrou           #+#    #+#             */
-/*   Updated: 2024/06/08 21:40:47 by neutrou          ###   ########.fr       */
+/*   Updated: 2024/07/17 13:16:33 by valgrant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,8 @@ void	ft_puttab(char **tab)
 
 	i = -1;
 	while (tab[++i])
+	{
 		write(1, tab[i], ft_strlen(tab[i]));
+		write(1, "\n", 1);
+	}
 }
