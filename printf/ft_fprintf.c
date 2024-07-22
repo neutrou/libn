@@ -1,44 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_fprintf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: valgrant <valgrant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 16:06:31 by valgrant          #+#    #+#             */
-/*   Updated: 2024/07/22 16:19:14 by valgrant         ###   ########.fr       */
+/*   Updated: 2024/07/22 16:19:46 by valgrant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incs/og.h"
 #include <stdarg.h>
 
-int	get_type(char c, va_list args, int fd)
-{
-	int	len;
-
-	len = 0;
-	if (c == 'c')
-	{
-		len = 1;
-		ft_putchar_fd(va_arg(args, int), fd);
-	}
-	else if (c == 's')
-		len = ft_putstrlen_fd(va_arg(args, char *), fd);
-	else if (c == 'p')
-		len = ft_printfmemlen_fd(va_arg(args, unsigned long long), fd);
-	else if (c == 'i' || c == 'd')
-		len = ft_putnbrlen_fd(va_arg(args, int), fd);
-	else if (c == 'u')
-		len = ft_putnbruintlen_fd(va_arg(args, unsigned int), fd);
-	else if (c == 'x')
-		len = ft_putnbrhexa_fd(va_arg(args, unsigned int), fd, 0);
-	else if (c == 'X')
-		len = ft_putnbrhexa_fd(va_arg(args, unsigned int), fd, 1);
-	return (len);
-}
-
-int	ft_printf(const char *format, ...)
+int	ft_fprintf(int fd, const char *format, ...)
 {
 	va_list	args;
 	int		i;
@@ -54,13 +29,13 @@ int	ft_printf(const char *format, ...)
 			if (format[++i] == '%')
 			{
 				len--;
-				ft_putchar_fd(format[i++], 1);
+				ft_putchar_fd(format[i++], fd);
 			}
 			else
-				len += get_type(format[i++], args, 1) - 2;
+				len += get_type(format[i++], args, fd) - 2;
 		}
 		else
-			write(1, &format[i++], 1);
+			write(1, &format[i++], fd);
 	}
 	va_end(args);
 	return (len + i);

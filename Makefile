@@ -6,7 +6,7 @@
 #    By: valgrant <valgrant@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/20 11:51:44 by valgrant          #+#    #+#              #
-#    Updated: 2024/06/21 11:32:23 by valgrant         ###   ########.fr        #
+#    Updated: 2024/07/22 16:21:04 by valgrant         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,7 @@ OGS = ogs/ft_atoi.c \
 	ogs/ft_tolower.c
 
 PRINTF = printf/ft_printf.c \
+	printf/ft_fprintf.c \
 	printf/ft_toput.c \
 	printf/ft_printfmem_fd.c \
 	printf/ft_tohexa.c
