@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: valgrant <valgrant@student.42.fr>          +#+  +:+       +#+         #
+#    By: neutrou <neutrou@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/20 11:51:44 by valgrant          #+#    #+#              #
-#    Updated: 2024/07/22 16:21:04 by valgrant         ###   ########.fr        #
+#    Updated: 2024/07/26 15:13:05 by neutrou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,8 @@ GC = gc_allocs/gc_malloc.c \
 	gc_allocs/gc_itoa.c \
 	gc_allocs/gc_split.c \
 	gc_allocs/gc_cpydchar.c \
-	gc_allocs/gc_strjoin.c
+	gc_allocs/gc_strjoin.c \
+	gc_allocs/gc_substr.c
 
 SRCS = ${OGS} ${PRINTF} ${GNL} ${UTILS} ${GC}
 
