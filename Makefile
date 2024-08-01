@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: neutrou <neutrou@student.42.fr>            +#+  +:+       +#+         #
+#    By: valgrant <valgrant@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/20 11:51:44 by valgrant          #+#    #+#              #
-#    Updated: 2024/07/26 15:13:05 by neutrou          ###   ########.fr        #
+#    Updated: 2024/08/01 15:34:33 by valgrant         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,17 +54,19 @@ GNL = gnl/get_next_line.c \
 UTILS = utils/dchars/ft_puttab.c \
 	utils/dchars/cpydchar.c \
 	utils/dchars/freedchar.c \
+	utils/dchars/ft_strjoin_tab.c \
 	utils/random/istype.c \
 	utils/random/conversions.c
 
-GC = gc_allocs/gc_malloc.c \
-	gc_allocs/gc_calloc.c \
-	gc_allocs/gc_strdup.c \
-	gc_allocs/gc_itoa.c \
-	gc_allocs/gc_split.c \
-	gc_allocs/gc_cpydchar.c \
-	gc_allocs/gc_strjoin.c \
-	gc_allocs/gc_substr.c
+GC = gc/gc_malloc.c \
+	gc/gc_calloc.c \
+	gc/gc_strdup.c \
+	gc/gc_itoa.c \
+	gc/gc_split.c \
+	gc/gc_cpydchar.c \
+	gc/gc_strjoin.c \
+	gc/gc_substr.c \
+	gc/gc_strjoin_tab.c
 
 SRCS = ${OGS} ${PRINTF} ${GNL} ${UTILS} ${GC}
 
@@ -89,9 +91,9 @@ OBJS = ${SRCS:.c=.o}
 		echo "Compiling [70%]"; \
 	elif [ "$<" = "utils/dchars/cpydchar.c" ]; then \
 		echo "Compiling [80%]"; \
-	elif [ "$<" = "gc_allocs/gc_strdup.c" ]; then \
+	elif [ "$<" = "gc/gc_strdup.c" ]; then \
 		echo "Compiling [90%]"; \
-	elif [ "$<" = "gc_allocs/gc_strjoin.c" ]; then \
+	elif [ "$<" = "gc/gc_strjoin.c" ]; then \
 		echo "Compiling [100%] : Complete"; \
 	fi
 	@${CC} ${CFLAGS} -c $< -o $@
