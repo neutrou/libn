@@ -2,6 +2,7 @@
 	"files.associations": {
 		"gnl.h": "c",
 		"fcntl.h": "c",
-		"stdio.h": "c"
+		"stdio.h": "c",
+		"libn.h": "c"
 	}
 }

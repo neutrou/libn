@@ -6,13 +6,11 @@
 /*   By: valgrant <valgrant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 14:17:59 by valgrant          #+#    #+#             */
-/*   Updated: 2024/06/18 16:28:09 by valgrant         ###   ########.fr       */
+/*   Updated: 2024/08/12 17:16:26 by valgrant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incs/gnl.h"
-
-/* trouve le nl */
 
 int	gc_tonl(t_list *temp)
 {
@@ -32,8 +30,6 @@ int	gc_tonl(t_list *temp)
 	return (0);
 }
 
-/* donne un pointeur sur le dernier element de la list*/
-
 t_list	*gc_getlast(t_list *temp)
 {
 	t_list	*current;
@@ -44,9 +40,7 @@ t_list	*gc_getlast(t_list *temp)
 	return (current);
 }
 
-/* compte les chars et gc_malloc */
-
-void	gc_generateline(char **line, t_list *temp, t_alloc *mem)
+void	gc_generateline(char **line, t_list *temp, t_alloc **mem)
 {
 	int	i;
 	int	len;
@@ -67,22 +61,5 @@ void	gc_generateline(char **line, t_list *temp, t_alloc *mem)
 		}
 		temp = temp->next;
 	}
-	*line = gc_malloc(sizeof(char) * (len + 1), &mem);
-}
-
-/* gc_free temp*/
-
-void	gc_freetemp(t_list *temp, t_alloc *mem)
-{
-	t_list	*current;
-	t_list	*next;
-
-	current = temp;
-	while (current)
-	{
-		gc_free(current->content, &mem);
-		next = current->next;
-		gc_free(current, &mem);
-		current = next;
-	}
+	*line = gc_malloc(sizeof(char) * (len + 1), mem);
 }
