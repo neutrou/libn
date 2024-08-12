@@ -6,7 +6,7 @@
 /*   By: valgrant <valgrant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 14:17:58 by valgrant          #+#    #+#             */
-/*   Updated: 2024/08/12 17:16:18 by valgrant         ###   ########.fr       */
+/*   Updated: 2024/08/12 17:19:42 by valgrant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ char	*gc_get_next_line(int fd, t_alloc **mem)
 	gc_cleantemp(&temp[fd], mem);
 	if (tbr[0] == '\0')
 	{
-		gc_freetemp(temp[fd], mem);
 		temp[fd] = NULL;
 		return (NULL);
 	}
